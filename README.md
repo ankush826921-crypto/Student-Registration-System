@@ -39,7 +39,8 @@ A complete Django-based Student Registration System with image upload, search fu
 
 ###  Student List: http://127.0.0.1:8000/students/
 
-### student-registration-system/
+### 📁 Project Structure
+student-registration-system/
 ├── registration/           # Main application
 │   ├── models.py          # Database models
 │   ├── views.py           # Business logic
@@ -53,3 +54,11 @@ A complete Django-based Student Registration System with image upload, search fu
 ├── static/                 # Static files
 ├── requirements.txt        # Dependencies
 └── manage.py              # Django management
+
+### 📸 Screenshots
+
+<img width="1923" height="1152" alt="Image" src="https://github.com/user-attachments/assets/00009873-ffe4-4c39-aa7a-61da1a1ddea2" />
+<img width="1923" height="860" alt="Image" src="https://github.com/user-attachments/assets/6a0ef53b-8643-4660-bac5-4813056f7bb3" />
+<img width="1352" height="1013" alt="Image" src="https://github.com/user-attachments/assets/ffbd97dc-363a-4d8f-82aa-50a713c59cec" />
+<img width="1923" height="1124" alt="Image" src="https://github.com/user-attachments/assets/32340d76-cba2-41a6-a2b9-dc7f6b26a5ec" />
+<img width="1923" height="1121" alt="Image" src="https://github.com/user-attachments/assets/bb98a2d5-9078-4ea4-b327-de914a59cf8f" />
