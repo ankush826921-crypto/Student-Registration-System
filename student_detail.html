@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header bg-white">
+                <h3><i class="fas fa-user-graduate"></i> Student Details</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        {% if student.student_image %}
+                            <img src="{{ student.student_image.url }}" alt="Student Photo" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+                        {% else %}
+                            <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 200px; height: 200px;">
+                                <i class="fas fa-user fa-5x text-white"></i>
+                            </div>
+                        {% endif %}
+                        <h4>{{ student.full_name }}</h4>
+                        <p class="text-muted">Reg. No: {{ student.registration_number }}</p>
+                    </div>
+                    <div class="col-md-8">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th width="35%">Full Name:</th>
+                                <td>{{ student.full_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Registration Number:</th>
+                                <td>{{ student.registration_number }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date of Birth:</th>
+                                <td>{{ student.date_of_birth }}</td>
+                            </tr>
+                            <tr>
+                                <th>Gender:</th>
+                                <td>{{ student.get_gender_display }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <td>{{ student.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number:</th>
+                                <td>{{ student.phone_number }}</td>
+                            </tr>
+                            <tr>
+                                <th>Address:</th>
+                                <td>{{ student.address }}</td>
+                            </tr>
+                            <tr>
+                                <th>Course:</th>
+                                <td>{{ student.get_course_display }}</td>
+                            </tr>
+                            <tr>
+                                <th>Semester:</th>
+                                <td>{{ student.semester }}</td>
+                            </tr>
+                            <tr>
+                                <th>Parent Name:</th>
+                                <td>{{ student.parent_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Parent Contact:</th>
+                                <td>{{ student.parent_contact }}</td>
+                            </tr>
+                            <tr>
+                                <th>Registration Date:</th>
+                                <td>{{ student.registration_date|date:"F d, Y H:i" }}</td>
+                            </tr>
+                        </table>
+                        <div class="text-center mt-3">
+                            <a href="{% url 'edit_student' student.id %}" class="btn btn-warning">
+                                <i class="fas fa-edit"></i> Edit
+                            </a>
+                            <a href="{% url 'student_list' %}" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Back to List
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

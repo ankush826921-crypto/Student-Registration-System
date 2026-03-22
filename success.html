@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card text-center">
+            <div class="card-body">
+                <div class="mb-4">
+                    <i class="fas fa-check-circle" style="font-size: 80px; color: #28a745;"></i>
+                </div>
+                <h2 class="card-title">Registration Successful!</h2>
+                <p class="card-text">Student {{ student.full_name }} has been successfully registered.</p>
+                <div class="alert alert-info">
+                    <strong>Registration Number:</strong> {{ student.registration_number }}
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="{% url 'student_detail' student.id %}" class="btn btn-info w-100">
+                            <i class="fas fa-eye"></i> View Details
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{% url 'register' %}" class="btn btn-primary w-100">
+                            <i class="fas fa-user-plus"></i> Register Another Student
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

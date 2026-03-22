@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register Student - Student Registration System{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header bg-white">
+                <h3 class="text-center mb-0">
+                    <i class="fas fa-user-graduate"></i> Student Registration Form
+                </h3>
+                <p class="text-center text-muted">Please fill in all required fields</p>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="mb-3">Personal Information</h5>
+                            <div class="mb-3">
+                                <label for="id_full_name" class="form-label">Full Name *</label>
+                                {{ form.full_name }}
+                                {% if form.full_name.errors %}
+                                    <div class="text-danger small">{{ form.full_name.errors }}</div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_date_of_birth" class="form-label">Date of Birth *</label>
+                                {{ form.date_of_birth }}
+                                {% if form.date_of_birth.errors %}
+                                    <div class="text-danger small">{{ form.date_of_birth.errors }}</div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_gender" class="form-label">Gender *</label>
+                                {{ form.gender }}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_email" class="form-label">Email Address *</label>
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                    <div class="text-danger small">{{ form.email.errors }}</div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_confirm_email" class="form-label">Confirm Email *</label>
+                                {{ form.confirm_email }}
+                                {% if form.confirm_email.errors %}
+                                    <div class="text-danger small">{{ form.confirm_email.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h5 class="mb-3">Contact & Academic Information</h5>
+                            <div class="mb-3">
+                                <label for="id_phone_number" class="form-label">Phone Number *</label>
+                                {{ form.phone_number }}
+                                {% if form.phone_number.errors %}
+                                    <div class="text-danger small">{{ form.phone_number.errors }}</div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_address" class="form-label">Address *</label>
+                                {{ form.address }}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_course" class="form-label">Course *</label>
+                                {{ form.course }}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_semester" class="form-label">Semester *</label>
+                                {{ form.semester }}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="mb-3">Parent/Guardian Information</h5>
+                            <div class="mb-3">
+                                <label for="id_parent_name" class="form-label">Parent/Guardian Name *</label>
+                                {{ form.parent_name }}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="id_parent_contact" class="form-label">Parent Contact Number *</label>
+                                {{ form.parent_contact }}
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h5 class="mb-3">Additional Information</h5>
+                            <div class="mb-3">
+                                <label for="id_student_image" class="form-label">Student Photo (Optional)</label>
+                                {{ form.student_image }}
+                                <small class="text-muted">Upload a recent passport-size photo (JPG, PNG)</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-save"></i> Register Student
+                        </button>
+                        <button type="reset" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
